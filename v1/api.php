@@ -79,9 +79,9 @@ if(isset($_GET['apicall'])){
             }
         break;
         case 'deleteFrutas':
-            if(isset($_GET['uid'])){
+            if(isset($_GET['campo_1'])){
                 $db = new Operacao();
-                if($db->deleteFrutas($_GET['uid'])){
+                if($db->deleteFrutas($_GET['campo_1'])){
                     $response['error'] = false;
                     $response['message'] = "Dado excluido com sucesso";
                     $response['deleteFrutas'] = $db->getFrutas();
