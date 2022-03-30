@@ -40,7 +40,7 @@ class Operacao{
     }
 
     function updateFrutas($campo_1,$campo_2,$campo_3,$campo_4){
-        $stmt = $this->con->prepare("update frutas_tb set nomefruta = ? ,imgfruta= ? , valorfruta = ? where uidfruta=?");
+        $stmt = $this->con->prepare("update frutas_tb set nomefruta=? ,imgfruta=?, valorfruta=? where uidfruta=?");
         $stmt->bind_param("sssi",$campo_2,$campo_3,$campo_4,$campo_1);
         if($stmt ->execute())
             return true;
@@ -48,7 +48,7 @@ class Operacao{
     }
 
     function deleteFrutas($campo_1){
-        $stmt = $this->con->prepare("delete from frutas_tb where uidfruta= ?");
+        $stmt = $this->con->prepare("delete from frutas_tb where uidfruta=?");
         $stmt->bind_param("i",$campo_1);
         if($stmt ->execute())
         return true;
